@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "a634c58b-2b9b-4904-a3dd-6a85b9e2c222",
+		"name": "API Hyperledger Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all assests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getAllAssets",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllAssets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Assest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"appraisedValue\": 300000,\n        \"color\": \"tim hoa ca\",\n        \"owner\": \"Tan Bui\",\n        \"size\": 50\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/createAsset",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createAsset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Asset by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/readAssetByID?id=asset1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"readAssetByID"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "asset1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer asset",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \n        \"owner\": \"Em Tan Bui22\",\n        \"id\": \"asset1\"\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transferAssetAsync",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferAssetAsync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Init ledger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/initLedger",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"initLedger"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
